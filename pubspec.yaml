@@ -19,3 +19,5 @@ flutter:
   uses-material-design: true
   assets:
   - assets/profile.jpg
+  - assets/profile1.jpeg
+  - assets/profile2.jpg
