@@ -21,7 +21,7 @@ class Babysitters extends StatelessWidget {
       child: SizedBox(
         height: 100,
         child: Card(
-          elevation: 8,
+          elevation: 5,
           child: Padding(
             padding: const EdgeInsets.only(left: 20),
             child: Row(
