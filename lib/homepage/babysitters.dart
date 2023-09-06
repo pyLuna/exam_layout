@@ -21,6 +21,13 @@ class Babysitters extends StatelessWidget {
       child: SizedBox(
         height: 100,
         child: Card(
+          shape: const RoundedRectangleBorder(
+            borderRadius: BorderRadius.all(
+              Radius.circular(
+                10,
+              ),
+            ),
+          ),
           elevation: 5,
           child: Padding(
             padding: const EdgeInsets.only(left: 20),

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:layout_exam/filterpage/distslider.dart';
 import 'package:layout_exam/filterpage/price.dart';
 import 'package:layout_exam/main.dart';
 
@@ -84,17 +85,9 @@ class FilterAppBar extends StatelessWidget {
             padding: const EdgeInsets.only(left: 20, right: 20),
             child: Column(
               children: [
-                Container(
-                  padding: const EdgeInsets.only(top: 20),
-                  width: constraints.maxWidth,
-                  height: 80,
-                  child: const Text(
-                    'Price',
-                    style: TextStyle(
-                      fontWeight: FontWeight.bold,
-                      fontSize: 30,
-                    ),
-                  ),
+                HeaderTitle(
+                  title: 'Price',
+                  constraints: constraints.maxWidth,
                 ),
                 const Row(
                   children: [
@@ -104,11 +97,42 @@ class FilterAppBar extends StatelessWidget {
                     ),
                     DropdownWidget(hint: 'Max'),
                   ],
-                )
+                ),
+                HeaderTitle(
+                  title: 'Distance',
+                  constraints: constraints.maxWidth,
+                ),
+                const DistanceSlider(),
               ],
             ),
           );
         },
+      ),
+    );
+  }
+}
+
+class HeaderTitle extends StatelessWidget {
+  const HeaderTitle({
+    super.key,
+    required this.title,
+    required this.constraints,
+  });
+  final String title;
+  final double constraints;
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      padding: const EdgeInsets.only(top: 20),
+      width: constraints,
+      height: 50,
+      child: Text(
+        title,
+        style: const TextStyle(
+          fontWeight: FontWeight.bold,
+          fontSize: 20,
+        ),
       ),
     );
   }

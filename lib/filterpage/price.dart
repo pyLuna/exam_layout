@@ -1,58 +1,21 @@
 import 'package:flutter/material.dart';
 
-class PriceWidget extends StatelessWidget {
-  const PriceWidget({super.key});
+// class PriceWidget extends StatelessWidget {
+//   const PriceWidget({super.key});
 
-  @override
-  Widget build(BuildContext context) {
-    return LayoutBuilder(
-      builder: (context, constraints) {
-        return Container(
-          padding: const EdgeInsets.only(left: 20, right: 20),
-          height: constraints.maxHeight,
-          child: Placeholder(),
-          // child: Column(
-          //   children: [
-          //     Container(
-          //       padding: const EdgeInsets.only(top: 20),
-          //       width: constraints.maxWidth,
-          //       height: 80,
-          //       child: const Text(
-          //         'Price',
-          //         style: TextStyle(
-          //           fontWeight: FontWeight.bold,
-          //           fontSize: 30,
-          //         ),
-          //       ),
-          //     ),
-          //     const SizedBox(
-          //       height: 60,
-          //       child: Row(
-          //         mainAxisAlignment: MainAxisAlignment.start,
-          //         children: [
-          //           Expanded(
-          //             child: DropdownWidget(
-          //               hint: 'Min',
-          //             ),
-          //           ),
-          //           SizedBox(
-          //             width: 10,
-          //           ),
-          //           Expanded(
-          //             child: DropdownWidget(
-          //               hint: 'Max',
-          //             ),
-          //           ),
-          //         ],
-          //       ),
-          //     ),
-          //   ],
-          // ),
-        );
-      },
-    );
-  }
-}
+//   @override
+//   Widget build(BuildContext context) {
+//     return LayoutBuilder(
+//       builder: (context, constraints) {
+//         return Container(
+//           padding: const EdgeInsets.only(left: 20, right: 20),
+//           height: constraints.maxHeight,
+//           child: Placeholder(),
+//         );
+//       },
+//     );
+//   }
+// }
 
 class DropdownWidget extends StatelessWidget {
   const DropdownWidget({super.key, required this.hint});
@@ -79,7 +42,7 @@ class DropdownWidget extends StatelessWidget {
               Icons.keyboard_arrow_down,
               color: Colors.black,
             ),
-            items: [],
+            items: const [],
             onChanged: (value) {},
           ),
         ),
