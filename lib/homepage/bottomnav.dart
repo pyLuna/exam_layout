@@ -6,7 +6,7 @@ class BottomNav extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return BottomAppBar(
-      shape: const CircularNotchedRectangle(),
+      // shape: const CircularNotchedRectangle(),
       child: SizedBox(
         height: 56,
         child: Row(

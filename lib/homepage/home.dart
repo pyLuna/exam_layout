@@ -38,14 +38,14 @@ class HomePage extends StatelessWidget {
           experience: '7 years',
           rate: '4.8',
           pic: AssetImage('assets/profile2.jpg'),
-          isonline: true,
+          isonline: false,
         ),
         Babysitters(
           name: 'Jane Grant',
           experience: '5 years',
           rate: '3.8',
           pic: AssetImage('assets/profile.jpg'),
-          isonline: true,
+          isonline: false,
         ),
         Babysitters(
           name: 'Jane Doe',
@@ -57,6 +57,13 @@ class HomePage extends StatelessWidget {
         Babysitters(
           name: 'John Doe',
           experience: '22 years',
+          rate: '5.0',
+          pic: AssetImage('assets/profile2.jpg'),
+          isonline: true,
+        ),
+        Babysitters(
+          name: 'John Doe Jr',
+          experience: '3 years',
           rate: '5.0',
           pic: AssetImage('assets/profile2.jpg'),
           isonline: true,

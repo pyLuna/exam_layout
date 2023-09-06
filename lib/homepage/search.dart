@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:layout_exam/filterpage/mainpage.dart';
 
 class SearchArea extends StatelessWidget {
   const SearchArea({super.key});
@@ -29,7 +30,12 @@ class SearchArea extends StatelessWidget {
                   color: Colors.orange,
                   borderRadius: BorderRadius.all(Radius.circular(10))),
               child: IconButton(
-                onPressed: () {},
+                onPressed: () {
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => const FilterMain()));
+                },
                 icon: const Icon(Icons.settings),
               )),
         ],

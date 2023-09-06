@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:layout_exam/bottomnav.dart';
+import 'package:layout_exam/homepage/bottomnav.dart';
 import 'package:layout_exam/homepage/profile.dart';
 import 'package:layout_exam/homepage/home.dart';
 
@@ -20,9 +20,7 @@ class _MyWidgetState extends State<MyWidget> {
     return const MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'Layout Exam',
-      home: Scaffold(
-        body: MyAppBar(),
-      ),
+      home: MyAppBar(),
     );
   }
 }
@@ -59,10 +57,8 @@ class MyAppBar extends StatelessWidget {
         elevation: 0,
       ),
       floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
-      floatingActionButton: FloatingActionButton(
-        child: const Icon(Icons.add),
-        onPressed: () {},
-      ),
+      floatingActionButton:
+          FloatingActionButton(child: const Icon(Icons.add), onPressed: () {}),
       body: const HomePage(),
       bottomNavigationBar: const BottomNav(),
     );
