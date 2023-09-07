@@ -11,10 +11,13 @@ class SearchArea extends StatelessWidget {
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
-          const Expanded(
+          Expanded(
             child: Card(
+              shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(10),
+              ),
               elevation: 5,
-              child: Padding(
+              child: const Padding(
                 padding: EdgeInsets.only(left: 10),
                 child: TextField(
                   decoration: InputDecoration(
@@ -26,12 +29,12 @@ class SearchArea extends StatelessWidget {
             ),
           ),
           const SizedBox(
-            width: 10,
+            width: 7,
           ),
           Container(
-              decoration: const BoxDecoration(
-                  color: Colors.orange,
-                  borderRadius: BorderRadius.all(Radius.circular(10))),
+              decoration: BoxDecoration(
+                  color: Theme.of(context).colorScheme.primaryContainer,
+                  borderRadius: const BorderRadius.all(Radius.circular(10))),
               child: IconButton(
                 onPressed: () {
                   Navigator.push(

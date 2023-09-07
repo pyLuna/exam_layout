@@ -14,8 +14,8 @@ class _DistanceSliderState extends State<DistanceSlider> {
   Widget build(BuildContext context) {
     return SliderTheme(
       data: SliderTheme.of(context).copyWith(
-        activeTrackColor: Colors.orange,
-        thumbColor: Colors.orange,
+        activeTrackColor: Theme.of(context).colorScheme.onBackground,
+        thumbColor: Theme.of(context).colorScheme.primary,
         overlayColor: Colors.white,
         overlayShape: const RoundSliderOverlayShape(
           overlayRadius: 15.0,

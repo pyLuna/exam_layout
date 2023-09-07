@@ -28,7 +28,7 @@ class Babysitters extends StatelessWidget {
               ),
             ),
           ),
-          elevation: 5,
+          elevation: 2,
           child: Padding(
             padding: const EdgeInsets.only(left: 20),
             child: Row(
@@ -67,7 +67,7 @@ class Babysitters extends StatelessWidget {
                             padding: const EdgeInsets.only(right: 10),
                             child: Icon(
                               Icons.star,
-                              color: Colors.orange[300],
+                              color: Theme.of(context).colorScheme.primary,
                               size: 15,
                             ),
                           ),
@@ -87,7 +87,7 @@ class Babysitters extends StatelessWidget {
                 IconButton(
                   onPressed: () {},
                   icon: const Icon(Icons.chevron_right_rounded),
-                  color: Colors.blue,
+                  color: Theme.of(context).primaryColor,
                 ),
               ],
             ),

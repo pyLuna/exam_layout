@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:layout_exam/filterpage/header_title.dart';
 
 import '../main.dart';
 import 'addition_option.dart';
 import 'dist_slider.dart';
+import 'find_button.dart';
 import 'online.dart';
 import 'price.dart';
 import 'see_all.dart';
@@ -12,14 +14,23 @@ void main() {
   runApp(const FilterMain());
 }
 
+ThemeData filterTheme = ThemeData(
+  // useMaterial3: true,
+  primaryColor: Colors.blue,
+  colorScheme: ColorScheme.fromSeed(
+    seedColor: Colors.orange,
+  ),
+);
+
 class FilterMain extends StatelessWidget {
   const FilterMain({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
+    return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: FilterAppBar(),
+      theme: filterTheme,
+      home: const FilterAppBar(),
     );
   }
 }
@@ -33,39 +44,42 @@ class FilterAppBar extends StatelessWidget {
       appBar: AppBar(
         toolbarHeight: 100,
         centerTitle: true,
-        title: Row(
-          children: [
-            ClipOval(
-              child: Container(
-                height: 50,
-                width: 50,
-                decoration: BoxDecoration(
-                  color: Colors.blue[300],
-                ),
-                child: IconButton(
-                  onPressed: () {
-                    Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                            builder: (context) => const MyWidget()));
-                  },
-                  icon: const Icon(Icons.chevron_left),
-                  color: Colors.white,
-                ),
-              ),
-            ),
-            const Padding(
-              padding: EdgeInsets.only(left: 20, top: 5),
-              child: Text(
-                'Filter by',
-                style: TextStyle(
-                  color: Colors.black,
-                  fontSize: 30,
-                  fontWeight: FontWeight.bold,
+        title: Padding(
+          padding: const EdgeInsets.only(left: 10),
+          child: Row(
+            children: [
+              ClipOval(
+                child: Container(
+                  height: 50,
+                  width: 50,
+                  decoration: BoxDecoration(
+                    color: Theme.of(context).colorScheme.secondary,
+                  ),
+                  child: IconButton(
+                    onPressed: () {
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => const MyWidget()));
+                    },
+                    icon: const Icon(Icons.chevron_left),
+                    color: Colors.white,
+                  ),
                 ),
               ),
-            ),
-          ],
+              const Padding(
+                padding: EdgeInsets.only(left: 20, top: 5),
+                child: Text(
+                  'Filter by',
+                  style: TextStyle(
+                    color: Colors.black,
+                    fontSize: 30,
+                    fontWeight: FontWeight.bold,
+                  ),
+                ),
+              ),
+            ],
+          ),
         ),
         actions: [
           Padding(
@@ -88,8 +102,8 @@ class FilterAppBar extends StatelessWidget {
       body: LayoutBuilder(
         builder: (context, constraints) {
           return Padding(
-            padding: const EdgeInsets.only(left: 20, right: 20),
-            child: Column(
+            padding: const EdgeInsets.only(left: 25, right: 25),
+            child: ListView(
               children: [
                 HeaderTitle(
                   title: 'Price',
@@ -114,8 +128,10 @@ class FilterAppBar extends StatelessWidget {
                 const OnlineNow(),
                 HeaderTitle(
                     title: 'Sorting by', constraints: constraints.maxWidth),
-                TextButtons(
-                  constraints: constraints.maxWidth,
+                Center(
+                  child: TextButtons(
+                    constraints: constraints.maxWidth,
+                  ),
                 ),
                 const SizedBox(height: 20),
                 Column(
@@ -130,11 +146,16 @@ class FilterAppBar extends StatelessWidget {
                         const SeeAll(),
                       ],
                     ),
-                    SizedBox(
-                      height: 280,
-                      width: constraints.maxWidth,
+                    Card(
+                      elevation: 4,
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(10),
+                      ),
                       child: const Column(
                         children: [
+                          SizedBox(
+                            height: 10,
+                          ),
                           Options(
                             text: 'Without bad habits',
                           ),
@@ -153,13 +174,19 @@ class FilterAppBar extends StatelessWidget {
                           Options(
                             text: 'Can take out the trash',
                           ),
+                          SizedBox(
+                            height: 10,
+                          )
                         ],
                       ),
+                    ),
+                    SizedBox(
+                      height: 20,
                     ),
                   ],
                 ),
                 Padding(
-                  padding: const EdgeInsets.only(bottom: 20),
+                  padding: const EdgeInsets.only(bottom: 30),
                   child: FindButton(
                     width: constraints.maxWidth,
                   ),
@@ -169,61 +196,12 @@ class FilterAppBar extends StatelessWidget {
           );
         },
       ),
-    );
-  }
-}
-
-class FindButton extends StatelessWidget {
-  const FindButton({
-    super.key,
-    required this.width,
-  });
-  final double width;
-  @override
-  Widget build(BuildContext context) {
-    return SizedBox(
-      height: 50,
-      width: width,
-      child: ElevatedButton(
-        style: ElevatedButton.styleFrom(
-          shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.circular(10),
-          ),
-        ),
-        onPressed: () {},
-        child: const Text(
-          'Find a nanny!',
-          style: TextStyle(
-            fontSize: 20,
-          ),
-        ),
-      ),
-    );
-  }
-}
-
-class HeaderTitle extends StatelessWidget {
-  const HeaderTitle({
-    super.key,
-    required this.title,
-    required this.constraints,
-  });
-  final String title;
-  final double constraints;
-
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-      padding: const EdgeInsets.only(top: 20),
-      width: constraints,
-      height: 50,
-      child: Text(
-        title,
-        style: const TextStyle(
-          fontWeight: FontWeight.bold,
-          fontSize: 20,
-        ),
-      ),
+      // floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
+      // floatingActionButton: FloatingActionButton.extended(
+      //   // shape: ,
+      //   label: const Text('Find A Nanny!'),
+      //   onPressed: () {},
+      // ),
     );
   }
 }

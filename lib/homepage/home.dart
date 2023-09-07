@@ -9,59 +9,64 @@ class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ListView(
-      children: const [
-        SearchArea(),
+      children: [
+        const SearchArea(),
         SingleChildScrollView(
           scrollDirection: Axis.horizontal,
           child: Padding(
-            padding: EdgeInsets.only(left: 15, bottom: 10, right: 15),
+            padding: const EdgeInsets.only(left: 15, bottom: 10, right: 15),
             child: Row(
               children: [
-                HorizontalCard(text: 'How to find a Nanny', color: Colors.blue),
                 HorizontalCard(
-                    text: "Let's play together", color: Colors.purple),
-                HorizontalCard(text: '3rd card text', color: Colors.green),
+                    text: 'How to find a Nanny',
+                    color: Theme.of(context).colorScheme.tertiaryContainer),
+                HorizontalCard(
+                    text: "Let's play together",
+                    color: Theme.of(context).colorScheme.primaryContainer),
+                HorizontalCard(
+                    text: '3rd card text',
+                    color: Theme.of(context).colorScheme.secondaryContainer),
               ],
             ),
           ),
         ),
-        HeaderTitle(title: 'Top Babysitters'),
-        Babysitters(
+        const HeaderTitle(title: 'Top Babysitters'),
+        const Babysitters(
           name: 'Anny White',
           experience: '5 years',
           rate: '5.0',
           pic: AssetImage('assets/profile1.jpeg'),
           isonline: true,
         ),
-        Babysitters(
+        const Babysitters(
           name: 'Marina Oakley',
           experience: '7 years',
           rate: '4.8',
           pic: AssetImage('assets/profile2.jpg'),
           isonline: false,
         ),
-        Babysitters(
+        const Babysitters(
           name: 'Jane Grant',
           experience: '5 years',
           rate: '3.8',
           pic: AssetImage('assets/profile.jpg'),
           isonline: false,
         ),
-        Babysitters(
+        const Babysitters(
           name: 'Jane Doe',
           experience: '10 years',
           rate: '5.0',
           pic: AssetImage('assets/profile2.jpg'),
           isonline: true,
         ),
-        Babysitters(
+        const Babysitters(
           name: 'John Doe',
           experience: '22 years',
           rate: '5.0',
           pic: AssetImage('assets/profile2.jpg'),
           isonline: true,
         ),
-        Babysitters(
+        const Babysitters(
           name: 'John Doe Jr',
           experience: '3 years',
           rate: '5.0',

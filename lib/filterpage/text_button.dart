@@ -23,8 +23,8 @@ class _TextButtonsState extends State<TextButtons> {
         });
       },
       borderRadius: BorderRadius.circular(8),
-      selectedColor: Colors.black,
-      fillColor: Colors.white,
+      selectedColor: Theme.of(context).colorScheme.onBackground,
+      fillColor: Theme.of(context).colorScheme.primaryContainer,
       disabledColor: Colors.green,
       color: Colors.grey,
       textStyle: const TextStyle(
