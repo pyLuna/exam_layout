@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:layout_exam/homepage/bottomnav.dart';
-import 'package:layout_exam/homepage/profile.dart';
-import 'package:layout_exam/homepage/home.dart';
+
+import 'homepage/bottom_nav.dart';
+import 'homepage/home.dart';
+import 'homepage/profile.dart';
 
 void main() {
   runApp(const MyWidget());

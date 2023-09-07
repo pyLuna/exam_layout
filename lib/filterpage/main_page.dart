@@ -1,7 +1,12 @@
 import 'package:flutter/material.dart';
-import 'package:layout_exam/filterpage/distslider.dart';
-import 'package:layout_exam/filterpage/price.dart';
-import 'package:layout_exam/main.dart';
+
+import '../main.dart';
+import 'addition_option.dart';
+import 'dist_slider.dart';
+import 'online.dart';
+import 'price.dart';
+import 'see_all.dart';
+import 'text_button.dart';
 
 void main() {
   runApp(const FilterMain());
@@ -26,6 +31,7 @@ class FilterAppBar extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        toolbarHeight: 100,
         centerTitle: true,
         title: Row(
           children: [
@@ -63,7 +69,7 @@ class FilterAppBar extends StatelessWidget {
         ),
         actions: [
           Padding(
-            padding: const EdgeInsets.only(right: 15, top: 8),
+            padding: const EdgeInsets.all(20),
             child: Card(
               elevation: 5,
               child: IconButton(
@@ -92,9 +98,7 @@ class FilterAppBar extends StatelessWidget {
                 const Row(
                   children: [
                     DropdownWidget(hint: 'Min'),
-                    SizedBox(
-                      width: 10,
-                    ),
+                    SizedBox(width: 10),
                     DropdownWidget(hint: 'Max'),
                   ],
                 ),
@@ -102,11 +106,97 @@ class FilterAppBar extends StatelessWidget {
                   title: 'Distance',
                   constraints: constraints.maxWidth,
                 ),
-                const DistanceSlider(),
+                SizedBox(
+                  width: constraints.maxWidth,
+                  child: const DistanceSlider(),
+                ),
+                const SizedBox(height: 20),
+                const OnlineNow(),
+                HeaderTitle(
+                    title: 'Sorting by', constraints: constraints.maxWidth),
+                TextButtons(
+                  constraints: constraints.maxWidth,
+                ),
+                const SizedBox(height: 20),
+                Column(
+                  children: [
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        HeaderTitle(
+                          title: 'Additions',
+                          constraints: constraints.maxWidth / 2,
+                        ),
+                        const SeeAll(),
+                      ],
+                    ),
+                    SizedBox(
+                      height: 280,
+                      width: constraints.maxWidth,
+                      child: const Column(
+                        children: [
+                          Options(
+                            text: 'Without bad habits',
+                          ),
+                          Options(
+                            text: 'Knows how to give first aid',
+                          ),
+                          Options(
+                            text: 'Multitasking and stress resistant',
+                          ),
+                          Options(
+                            text: 'Has own baby monitor',
+                          ),
+                          Options(
+                            text: 'Super ability to swaddle in the air',
+                          ),
+                          Options(
+                            text: 'Can take out the trash',
+                          ),
+                        ],
+                      ),
+                    ),
+                  ],
+                ),
+                Padding(
+                  padding: const EdgeInsets.only(bottom: 20),
+                  child: FindButton(
+                    width: constraints.maxWidth,
+                  ),
+                ),
               ],
             ),
           );
         },
+      ),
+    );
+  }
+}
+
+class FindButton extends StatelessWidget {
+  const FindButton({
+    super.key,
+    required this.width,
+  });
+  final double width;
+  @override
+  Widget build(BuildContext context) {
+    return SizedBox(
+      height: 50,
+      width: width,
+      child: ElevatedButton(
+        style: ElevatedButton.styleFrom(
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(10),
+          ),
+        ),
+        onPressed: () {},
+        child: const Text(
+          'Find a nanny!',
+          style: TextStyle(
+            fontSize: 20,
+          ),
+        ),
       ),
     );
   }

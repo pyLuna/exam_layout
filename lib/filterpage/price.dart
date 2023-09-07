@@ -1,22 +1,5 @@
 import 'package:flutter/material.dart';
 
-// class PriceWidget extends StatelessWidget {
-//   const PriceWidget({super.key});
-
-//   @override
-//   Widget build(BuildContext context) {
-//     return LayoutBuilder(
-//       builder: (context, constraints) {
-//         return Container(
-//           padding: const EdgeInsets.only(left: 20, right: 20),
-//           height: constraints.maxHeight,
-//           child: Placeholder(),
-//         );
-//       },
-//     );
-//   }
-// }
-
 class DropdownWidget extends StatelessWidget {
   const DropdownWidget({super.key, required this.hint});
   final String hint;

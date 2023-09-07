@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:layout_exam/filterpage/mainpage.dart';
+import 'package:layout_exam/filterpage/main_page.dart';
 
 class SearchArea extends StatelessWidget {
   const SearchArea({super.key});
@@ -24,6 +24,9 @@ class SearchArea extends StatelessWidget {
                 ),
               ),
             ),
+          ),
+          const SizedBox(
+            width: 10,
           ),
           Container(
               decoration: const BoxDecoration(
