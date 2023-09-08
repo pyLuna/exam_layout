@@ -28,7 +28,8 @@ class Babysitters extends StatelessWidget {
               ),
             ),
           ),
-          elevation: 2,
+          shadowColor: Colors.black26,
+          elevation: 5,
           child: Padding(
             padding: const EdgeInsets.only(left: 20),
             child: Row(

@@ -18,7 +18,7 @@ ThemeData filterTheme = ThemeData(
   // useMaterial3: true,
   primaryColor: Colors.blue,
   colorScheme: ColorScheme.fromSeed(
-    seedColor: Colors.orange,
+    seedColor: Colors.purple,
   ),
 );
 
@@ -85,11 +85,15 @@ class FilterAppBar extends StatelessWidget {
           Padding(
             padding: const EdgeInsets.all(20),
             child: Card(
+              shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(10),
+              ),
+              shadowColor: Colors.black26,
               elevation: 5,
               child: IconButton(
                 onPressed: () {},
                 icon: const Icon(
-                  Icons.cleaning_services,
+                  Icons.cleaning_services_outlined,
                   color: Colors.black,
                 ),
               ),
@@ -109,31 +113,36 @@ class FilterAppBar extends StatelessWidget {
                   title: 'Price',
                   constraints: constraints.maxWidth,
                 ),
-                const Row(
-                  children: [
-                    DropdownWidget(hint: 'Min'),
-                    SizedBox(width: 10),
-                    DropdownWidget(hint: 'Max'),
-                  ],
+                SizedBox(
+                  width: constraints.maxWidth,
+                  child: const Row(
+                    children: [
+                      DropdownWidget(hint: 'Min'),
+                      SizedBox(width: 10),
+                      DropdownWidget(hint: 'Max'),
+                    ],
+                  ),
                 ),
                 HeaderTitle(
                   title: 'Distance',
                   constraints: constraints.maxWidth,
                 ),
+                const SizedBox(
+                  height: 10,
+                ),
                 SizedBox(
+                  height: 60,
                   width: constraints.maxWidth,
                   child: const DistanceSlider(),
                 ),
-                const SizedBox(height: 20),
                 const OnlineNow(),
                 HeaderTitle(
                     title: 'Sorting by', constraints: constraints.maxWidth),
-                Center(
-                  child: TextButtons(
-                    constraints: constraints.maxWidth,
-                  ),
+                const SizedBox(height: 5),
+                TextButtons(
+                  constraints: constraints.maxWidth,
                 ),
-                const SizedBox(height: 20),
+                const SizedBox(height: 5),
                 Column(
                   children: [
                     Row(
@@ -146,41 +155,45 @@ class FilterAppBar extends StatelessWidget {
                         const SeeAll(),
                       ],
                     ),
-                    Card(
-                      elevation: 4,
-                      shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(10),
-                      ),
-                      child: const Column(
-                        children: [
-                          SizedBox(
-                            height: 10,
-                          ),
-                          Options(
-                            text: 'Without bad habits',
-                          ),
-                          Options(
-                            text: 'Knows how to give first aid',
-                          ),
-                          Options(
-                            text: 'Multitasking and stress resistant',
-                          ),
-                          Options(
-                            text: 'Has own baby monitor',
-                          ),
-                          Options(
-                            text: 'Super ability to swaddle in the air',
-                          ),
-                          Options(
-                            text: 'Can take out the trash',
-                          ),
-                          SizedBox(
-                            height: 10,
-                          )
-                        ],
+                    SizedBox(
+                      height: constraints.maxHeight / 3.3,
+                      child: Card(
+                        shadowColor: Colors.black26,
+                        elevation: 5,
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(10),
+                        ),
+                        child: ListView(
+                          children: const [
+                            SizedBox(
+                              height: 10,
+                            ),
+                            Options(
+                              text: 'Without bad habits',
+                            ),
+                            Options(
+                              text: 'Knows how to give first aid',
+                            ),
+                            Options(
+                              text: 'Multitasking and stress resistant',
+                            ),
+                            Options(
+                              text: 'Has own baby monitor',
+                            ),
+                            Options(
+                              text: 'Super ability to swaddle in the air',
+                            ),
+                            Options(
+                              text: 'Can take out the trash',
+                            ),
+                            SizedBox(
+                              height: 10,
+                            )
+                          ],
+                        ),
                       ),
                     ),
-                    SizedBox(
+                    const SizedBox(
                       height: 20,
                     ),
                   ],

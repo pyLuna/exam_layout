@@ -17,9 +17,10 @@ class _DistanceSliderState extends State<DistanceSlider> {
         activeTrackColor: Theme.of(context).colorScheme.onBackground,
         thumbColor: Theme.of(context).colorScheme.primary,
         overlayColor: Colors.white,
-        overlayShape: const RoundSliderOverlayShape(
-          overlayRadius: 15.0,
-        ),
+        overlayShape: SliderComponentShape.noOverlay,
+        // overlayShape: const RoundSliderOverlayShape(
+        //   overlayRadius: 15.0,
+        // ),
         trackHeight: 2,
       ),
       child: Column(

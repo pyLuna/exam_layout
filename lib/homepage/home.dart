@@ -8,7 +8,7 @@ class HomePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return ListView(
+    return Column(
       children: [
         const SearchArea(),
         SingleChildScrollView(
@@ -31,47 +31,56 @@ class HomePage extends StatelessWidget {
           ),
         ),
         const HeaderTitle(title: 'Top Babysitters'),
-        const Babysitters(
-          name: 'Anny White',
-          experience: '5 years',
-          rate: '5.0',
-          pic: AssetImage('assets/profile1.jpeg'),
-          isonline: true,
-        ),
-        const Babysitters(
-          name: 'Marina Oakley',
-          experience: '7 years',
-          rate: '4.8',
-          pic: AssetImage('assets/profile2.jpg'),
-          isonline: false,
-        ),
-        const Babysitters(
-          name: 'Jane Grant',
-          experience: '5 years',
-          rate: '3.8',
-          pic: AssetImage('assets/profile.jpg'),
-          isonline: false,
-        ),
-        const Babysitters(
-          name: 'Jane Doe',
-          experience: '10 years',
-          rate: '5.0',
-          pic: AssetImage('assets/profile2.jpg'),
-          isonline: true,
-        ),
-        const Babysitters(
-          name: 'John Doe',
-          experience: '22 years',
-          rate: '5.0',
-          pic: AssetImage('assets/profile2.jpg'),
-          isonline: true,
-        ),
-        const Babysitters(
-          name: 'John Doe Jr',
-          experience: '3 years',
-          rate: '5.0',
-          pic: AssetImage('assets/profile2.jpg'),
-          isonline: true,
+        const SizedBox(
+          height: 500,
+          child: SingleChildScrollView(
+            child: Column(
+              children: [
+                Babysitters(
+                  name: 'Anny White',
+                  experience: '5 years',
+                  rate: '5.0',
+                  pic: AssetImage('assets/profile1.jpeg'),
+                  isonline: true,
+                ),
+                Babysitters(
+                  name: 'Marina Oakley',
+                  experience: '7 years',
+                  rate: '4.8',
+                  pic: AssetImage('assets/profile2.jpg'),
+                  isonline: false,
+                ),
+                Babysitters(
+                  name: 'Jane Grant',
+                  experience: '5 years',
+                  rate: '3.8',
+                  pic: AssetImage('assets/profile.jpg'),
+                  isonline: false,
+                ),
+                Babysitters(
+                  name: 'Jane Doe',
+                  experience: '10 years',
+                  rate: '5.0',
+                  pic: AssetImage('assets/profile2.jpg'),
+                  isonline: true,
+                ),
+                Babysitters(
+                  name: 'John Doe',
+                  experience: '22 years',
+                  rate: '5.0',
+                  pic: AssetImage('assets/profile2.jpg'),
+                  isonline: true,
+                ),
+                Babysitters(
+                  name: 'John Doe Jr',
+                  experience: '3 years',
+                  rate: '5.0',
+                  pic: AssetImage('assets/profile2.jpg'),
+                  isonline: true,
+                ),
+              ],
+            ),
+          ),
         ),
       ],
     );
@@ -83,19 +92,24 @@ class HeaderTitle extends StatelessWidget {
   final String title;
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.only(
-        top: 10,
-        left: 20,
-        bottom: 10,
-      ),
-      child: Text(
-        title,
-        style: const TextStyle(
-          fontWeight: FontWeight.bold,
-          fontSize: 20,
+    return LayoutBuilder(builder: (context, constraints) {
+      return SizedBox(
+        width: constraints.maxWidth,
+        child: Padding(
+          padding: const EdgeInsets.only(
+            top: 10,
+            left: 25,
+            bottom: 10,
+          ),
+          child: Text(
+            title,
+            style: const TextStyle(
+              fontWeight: FontWeight.bold,
+              fontSize: 20,
+            ),
+          ),
         ),
-      ),
-    );
+      );
+    });
   }
 }

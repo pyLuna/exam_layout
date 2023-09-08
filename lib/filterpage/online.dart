@@ -1,5 +1,5 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_switch/flutter_switch.dart';
 
 class OnlineNow extends StatefulWidget {
   const OnlineNow({super.key});
@@ -16,6 +16,7 @@ class _OnlineNowState extends State<OnlineNow> {
     return SizedBox(
       height: 60,
       child: Card(
+        shadowColor: Colors.black26,
         elevation: 5,
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(10),
@@ -31,14 +32,16 @@ class _OnlineNowState extends State<OnlineNow> {
                   fontSize: 18,
                 ),
               ),
-              CupertinoSwitch(
-                activeColor: Colors.blue,
-                value: isOn,
-                onChanged: (value) {
+              FlutterSwitch(
+                height: 28,
+                width: 55,
+                onToggle: (value) {
                   setState(() {
                     isOn = value;
                   });
                 },
+                activeColor: Theme.of(context).colorScheme.primary,
+                value: isOn,
               )
             ],
           ),

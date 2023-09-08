@@ -28,7 +28,8 @@ class HorizontalCard extends StatelessWidget {
       //   ),
       // ),
       child: Card(
-        elevation: 2.3,
+        shadowColor: Colors.black26,
+        elevation: 5,
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(10),
         ),

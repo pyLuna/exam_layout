@@ -12,6 +12,7 @@ class DropdownWidget extends StatelessWidget {
             Radius.circular(8),
           ),
         ),
+        shadowColor: Colors.black26,
         elevation: 5,
         borderOnForeground: false,
         child: Padding(

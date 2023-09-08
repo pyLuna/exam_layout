@@ -16,7 +16,8 @@ class SearchArea extends StatelessWidget {
               shape: RoundedRectangleBorder(
                 borderRadius: BorderRadius.circular(10),
               ),
-              elevation: 5,
+              shadowColor: Colors.black12,
+              elevation: 8,
               child: const Padding(
                 padding: EdgeInsets.only(left: 10),
                 child: TextField(
